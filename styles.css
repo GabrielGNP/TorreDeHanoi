@@ -1,0 +1,205 @@
+:root{
+    --colorRest : #40bb34;
+}
+
+*{
+    font-family: monospace,cursive,system-ui,auto;
+}
+body{
+    background: #262626;
+    margin: 0px;
+}
+header{
+    background: #171717;
+    height: 10vh;
+    font-size: 4vh;
+    color: #dcdcdc;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.screen{
+    margin: 3vh;
+    height: 40vh;
+    background: rgb(1 1 12);
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+
+.board{
+    margin-top: 3vh;
+    height: 40vh;
+    /*background: rgb(154, 7, 7);*/
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    
+}
+
+.ContButtons{
+    height: 2vh;
+
+    /*background: rgb(0, 66, 128);*/
+    margin: 1vh;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.ContEnterResetButtons{
+    margin: 0px;
+}
+.EnterResetButtons{
+    height: 5vh;
+    width: 5vh;
+    background: #202020;
+    
+    color: #390606;
+    font-size: 3vh;
+
+    text-align: center;
+    
+    
+    padding-top: 0.5vh;
+
+    border: 0px;
+    border-bottom: 0.6vh solid rgb(23, 23, 23);
+    border-top: 0.6vh solid rgb(49, 49, 49);
+}
+.button{
+    height: 10vh;
+    width: 10vh;
+    background: #202020;
+    margin-top: 7vh;
+
+    color: #390606;
+    font-size: 7vh;
+    font-stretch: ultra-expanded;
+    text-align: center;
+    padding-top: 1vh;
+    padding-bottom: 9vh;
+    border: 0px;
+    border-bottom: 1vh solid #171717;
+    border-top: 1vh solid #313131;
+ 
+}
+
+.OP{
+    margin: 1vh;
+    padding: 0.8vh;
+    
+}
+.OPSELECT{
+    border: 0.3vh dashed var(--colorRest);
+    box-shadow: 0px 0px 10px var(--colorRest);
+    padding: 0.5vh;
+}
+
+CR{
+    color: var(--colorRest);
+    font-size: 2.3vh;
+}
+.arrowSpace{
+    /*background: green;*/
+    width: inherit;
+    height: 10vh;
+
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: nowrap;
+}
+.arrow{
+    /*background: red; */
+    width: 100%; 
+    height: 6vh; 
+    margin: 2vh;
+    color: white;
+    font-size: 5vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.timer{
+    
+    font-family: monospace;
+    color: #00f200;
+    position: relative;
+    left: 0px;
+    align-self: center;
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.game{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+.contStack{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    height: 90%;
+    width: 100%;
+    margin: 2vh;
+}
+.post{
+    /*background: #a18666;*/
+    height: 90%;
+    width: 100%;
+    margin: 2vh;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+
+
+.base{
+    /* background-color: rgb(104, 73, 48); */
+    width: 100%;
+    height: 1.7vh;
+    margin: 0px;
+    border: 0.3vh solid rgb(104, 73, 48);
+}
+
+
+.disc{
+    width: 10%;
+    margin-top: 0.3vh;
+    height: 1vh;
+    border: 0.3vh dashed goldenrod;
+}
+
+.endGame{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+}

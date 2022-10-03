@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/brands.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/solid.css">
+    <!--<script src="https://kit.fontawesome.com/c3a32bb4c5.js" crossorigin="anonymous"></script>-->
+    <script src="funcs.js"></script>
+</head>
+<body id="body">
+    <header>
+        <div>Torre de Hanoi</div>
+    </header>
+    <main>
+        <section class="screen menu" id="screen">
+            
+          
+            <div class="OP OPSELECT" id="OPM0">Start</div>
+            <div class="OP" id="OPM1">Discs <CR><</CR> 3 <CR>></CR></div>
+
+             <!--
+            <div id="timer" class="timer">00:00:00.00</div>
+            <div id="arrowSpace" class="arrowSpace">    
+                <div id="pos1" class="arrow"><i class="fa-solid fa-angles-down"></i></div>
+                <div id="pos2" class="arrow"></div>
+                <div id="pos3" class="arrow"></div>
+            </div>
+            <div id="screenGame" class="game">
+                <div id="post1"  class="post">
+                    <div class="disc" style="width: 10%;"></div>
+                    <div class="disc" style="width: 20%;"></div>
+                    <div class="disc" style="width: 30%;"></div>
+                    <div class="disc" style="width: 40%;"></div>
+                    <div class="disc" style="width: 50%;"></div>
+                    <div class="disc" style="width: 60%;"></div>
+                    <div class="disc" style="width: 70%;"></div>
+                    <div class="disc" style="width: 80%;"></div>
+                    <div class="disc" style="width: 90%;"></div>
+                    <div class="disc" style="width: 100%;"></div>
+                    <div class="base"></div>
+                </div>
+                <div  id="post2" class="post">
+                    <div class="base"></div>
+                </div>
+                <div  id="post3"  class="post">
+                    <div class="base"></div>
+                </div>
+            </div> -->
+<!--
+            <h1>END GAME</h1>
+            <br>
+            Reiniciar?-->
+        </section>
+        <section class="board" id="board">
+            <div class="ContEnterResetButtons" >
+                <button class="EnterResetButtons" id="BEnter" onclick="PressButton('BEnter');"><i class="fa-regular fa-square-caret-right"></i></button>
+            </div>
+            <div class="ContButtons" >
+                <button class="button" id="BLeft" onclick="PressButton('BLeft');"><i class="fa-solid fa-left-long"></i></button>
+            </div>
+            <div class="ContButtons">
+                <button class="button" id="BUp" onclick="PressButton('BUp');"><i class="fa-solid fa-up-long"></i></button>
+                <button class="button" id="BDown" onclick="PressButton('BDown');"><i class="fa-solid fa-down-long"></i></button>
+            </div>
+            <div class="ContButtons" >
+                <button class="button" id="BRight" onclick="PressButton('BRight');"><i class="fa-solid fa-right-long"></i></button>
+            </div>
+            <div class="ContEnterResetButtons" >
+                <button class="EnterResetButtons" id="BReset" onclick="PressButton('BReset');"><i class="fa-solid fa-rotate-right"></i></button>
+            </div>
+
+        </section>
+    </main>
+    <footer></footer>
+</body>
+</html>
