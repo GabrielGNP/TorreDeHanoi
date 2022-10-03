@@ -57,22 +57,32 @@
             Reiniciar?-->
         </section>
         <section class="board" id="board">
-            <div class="ContEnterResetButtons" >
-                <button class="EnterResetButtons" id="BEnter" onclick="PressButton('BEnter');"><i class="fa-regular fa-square-caret-right"></i></button>
+            <div class="infoL" >
+                <button class="EnterResetButtons" style="color:#ca0000;" id="infoL" onclick="MessageInfo();"><i class="fa-solid fa-circle-info"></i></button>
             </div>
-            <div class="ContButtons" >
-                <button class="button" id="BLeft" onclick="PressButton('BLeft');"><i class="fa-solid fa-left-long"></i></button>
+            <div style="display: flex;">
+                <div class="ContEnterResetButtons" >
+                    <button class="EnterResetButtons" id="BEnter" onclick="PressButton('BEnter');"><i class="fa-regular fa-square-caret-right"></i></button>
+                </div>
+                <div class="ContButtons" >
+                    <button class="button" id="BLeft" onclick="PressButton('BLeft');"><i class="fa-solid fa-left-long"></i></button>
+                </div>
+                <div class="ContButtons">
+                    <button class="button" id="BUp" onclick="PressButton('BUp');"><i class="fa-solid fa-up-long"></i></button>
+                    <button class="button" id="BDown" onclick="PressButton('BDown');"><i class="fa-solid fa-down-long"></i></button>
+                </div>
+                <div class="ContButtons" >
+                    <button class="button" id="BRight" onclick="PressButton('BRight');"><i class="fa-solid fa-right-long"></i></button>
+                </div>
+                <div class="ContEnterResetButtons" >
+                    <button class="EnterResetButtons" id="BReset" onclick="PressButton('BReset');"><i class="fa-solid fa-rotate-right"></i></button>
+                </div>
             </div>
-            <div class="ContButtons">
-                <button class="button" id="BUp" onclick="PressButton('BUp');"><i class="fa-solid fa-up-long"></i></button>
-                <button class="button" id="BDown" onclick="PressButton('BDown');"><i class="fa-solid fa-down-long"></i></button>
+            <div style="width: 5vh; margin-right: 2vh;" >
+                
             </div>
-            <div class="ContButtons" >
-                <button class="button" id="BRight" onclick="PressButton('BRight');"><i class="fa-solid fa-right-long"></i></button>
-            </div>
-            <div class="ContEnterResetButtons" >
-                <button class="EnterResetButtons" id="BReset" onclick="PressButton('BReset');"><i class="fa-solid fa-rotate-right"></i></button>
-            </div>
+        </section>
+        
 
         </section>
     </main>

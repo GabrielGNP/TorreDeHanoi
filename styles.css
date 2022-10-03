@@ -39,7 +39,7 @@ header{
     /*background: rgb(154, 7, 7);*/
 
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     align-content: center;
     
@@ -204,4 +204,33 @@ CR{
     flex-wrap: wrap;
     align-items: center;
     text-align: center;
+}
+
+.infoL{
+    margin-left: 2vh;
+}
+
+#MensInf{
+    height: 80vh;
+    width: 80vh;
+    position: fixed;
+    top: 10vh;
+    left: 10vh;
+
+    background: #101010;
+    border: 0.2vh solid grey;
+    color: white;
+
+    overflow-y: auto;
+}
+
+.HeaderMensInf{
+    height: 30px; 
+    width: inherit;
+
+    color: white;
+    background:linear-gradient(180deg, #181818, #373737); 
+    
+    text-align: right;
+    position:fixed;
 }

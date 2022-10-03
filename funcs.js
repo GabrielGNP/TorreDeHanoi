@@ -475,3 +475,59 @@ function formatearMS(tiempo_ms){
 
     return `${display_horas}:${display_minutes}:${display_seconds}.${MS}`;
 }
+
+
+function MessageInfo(){
+
+    text =  
+    "<h1>Torres de Hanói<br> </h1>"+
+    "Un juego tradicional.<br>"+
+    "Puede elegir jugar con un rango de entre 3 y 10 discos.<br>"+
+    "<br>"+
+    "Tendrá un cronometro para conocer el tiempo que ha tardado en resolver el juego.<br>"+
+    "<br>"+
+    "Podrá reiniciar el juego con el botón <i style='color:#ca0000;' class='fa-solid fa-rotate-right'></i> (o Escape del teclado).<br>"+
+    "Para iniciar el juego solo presione <i style='color:#ca0000;' class='fa-regular fa-square-caret-right'></i> (o Enter del teclado).<br>"+
+    "<br>"+
+    "Para moverse a la izquierda presione <i style='color:#ca0000;' class='fa-solid fa-left-long'></i> (o ← del teclado).<br>"+
+    "Para moverse a la derecha presione <i style='color:#ca0000;' class='fa-solid fa-right-long'></i> (o → del teclado).<br>"+
+    "Para tomar un disco presione <i style='color:#ca0000;' class='fa-solid fa-up-long'></i> (o ↑ del teclado).<br>"+
+    "Para dejar un disco presione <i style='color:#ca0000;' class='fa-solid fa-down-long'></i> (o ↓ del teclado).<br>"+
+    "<br>"+
+    "Reglas de juego <br>"+
+    "-	Solo se pude mover un disco a la vez.<br>"+
+    "-	No se puede ubicar un disco más grande sobre un disco más pequeño.<br>"+
+    "-	El juego finaliza cuando todos los discos están en la posición de la rececha.<br>"+
+    "<br>"+
+    "Ya está listo para jugar ;) <br>"+
+    "<br>"+
+    "<br>"+
+    "<br>"+
+    "Portafolio del creador (para ver más cositas): <a target='_blank' href='https://gabrielgnp.github.io/Portafolio/index.html'>Portafolio</a></div><br>";
+
+    var plantilla = 
+    '<div id="MensInf">'+
+        '<div class="HeaderMensInf" >'
+            +'<button class="ButOPCont" style=" color:white; margin: 0px; border: 0px; height: 100%; background:transparent;" onclick="DeleteHTML(`MensInf`)"> X</button>'
+        +'</div>'
+        +'<div style="text-align:center; padding-top: 35px;">'+text+'</div>'
+    +'</div>';
+
+    var block = '<div id="displayblack" style=" position:absolute; top:0px; background : #181818d9; height: '+(document.getElementById("body").clientHeight+100).toString()+"px"+'; width:100%"></div>';
+
+    document.getElementById("body").insertAdjacentHTML("beforeend", block) ;
+    document.getElementById("body").style.overflow = "hidden";
+    document.getElementById("displayblack").insertAdjacentHTML("beforeend", plantilla) ;
+
+
+
+}
+
+
+
+function DeleteHTML(ObjId){
+    document.getElementById(ObjId).remove();
+    if (!!document.getElementById("displayblack")){
+        document.getElementById("displayblack").remove();
+    }
+}
