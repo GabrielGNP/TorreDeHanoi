@@ -144,6 +144,7 @@ function PressKey(id){
     }else{
         if(document.getElementById("screen").className == "screen"){
             if(!cronometroOn){
+                startTime = Date.now()-tiempoTot;
                 cronometroOn = true; 
             }
             switch (id){
@@ -201,6 +202,7 @@ function ConstructGame(){
     pointer = 1;
     weightAr = -1;
 
+    startTime = Date.now()-tiempoTot;
     tiempoTot = 0;
     posMenuOP = 0;
     cronometroOn = false;
