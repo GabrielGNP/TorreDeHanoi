@@ -213,9 +213,7 @@ CR{
 #MensInf{
     height: 80vh;
     width: 80vh;
-    position: fixed;
-    top: 10vh;
-    left: 10vh;
+    
 
     background: #101010;
     border: 0.2vh solid grey;

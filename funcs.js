@@ -513,7 +513,7 @@ function MessageInfo(){
         +'<div style="text-align:center; padding-top: 35px;">'+text+'</div>'
     +'</div>';
 
-    var block = '<div id="displayblack" style=" position:absolute; top:0px; background : #181818d9; height: '+(document.getElementById("body").clientHeight+100).toString()+"px"+'; width:100%"></div>';
+    var block = '<div id="displayblack" style=" position:absolute; top:0px; background : #181818d9; height: 100%; width:100%; display: flex; justify-content: center; align-content: center; flex-wrap: wrap; flex-direction: row;"></div>';
 
     document.getElementById("body").insertAdjacentHTML("beforeend", block) ;
     document.getElementById("body").style.overflow = "hidden";
