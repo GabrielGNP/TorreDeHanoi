@@ -507,14 +507,20 @@ function MessageInfo(){
     "<br>"+
     "<br>"+
     "<br>"+
-    "Portafolio del creador (para ver más cositas): <a target='_blank' href='https://gabrielgnp.github.io/Portafolio/index.html'>Portafolio</a></div><br>";
+    "Portafolio del creador (para ver más cositas): <a target='_blank' href='https://gabrielgnp.github.io/Portafolio/index.html'>Portafolio</a><br>"+
+    "<br>"+
+    "<br>"+
+    "<br>"+
+    "<br>"+
+    "<br>"+
+    "</div><br>";
 
     var plantilla = 
     '<div id="MensInf">'+
         '<div class="HeaderMensInf" >'
             +'<button class="ButOPCont" style=" color:white; margin: 0px; border: 0px; height: 100%; background:transparent;" onclick="DeleteHTML(`MensInf`)"> X</button>'
         +'</div>'
-        +'<div style="text-align:center; padding-top: 35px;">'+text+'</div>'
+        +'<div style="text-align:center; padding-top: 35px; overflow-y: auto; height: 100%; width: 100%;">'+text+'</div>'
     +'</div>';
 
     var block = '<div id="displayblack" style=" position:absolute; top:0px; background : #181818d9; height: 100%; width:100%; display: flex; justify-content: center; align-content: center; flex-wrap: wrap; flex-direction: row;"></div>';

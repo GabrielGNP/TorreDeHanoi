@@ -219,16 +219,16 @@ CR{
     border: 0.2vh solid grey;
     color: white;
 
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 .HeaderMensInf{
     height: 30px; 
-    width: inherit;
+    width: 100%;
 
     color: white;
     background:linear-gradient(180deg, #181818, #373737); 
     
     text-align: right;
-    position:fixed;
+    /*position:fixed;*/
 }
