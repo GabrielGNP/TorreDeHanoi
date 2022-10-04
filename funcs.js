@@ -12,6 +12,9 @@ function PressButton(id){
         if(id=="BEnter"){
             ConstructGame();
         }
+        if(id=="BReset"){
+            Reset();
+        }
     }else{
         button.style.color = "#b01010";
         button.style.borderBottom = "1vh solid transparent";
