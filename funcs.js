@@ -9,6 +9,9 @@ function PressButton(id){
             button.style.borderBottom = "0.6vh solid #171717";
             button.style.borderTop = "0.6vh solid #313131";
         }, 150);
+        if(id=="BEnter"){
+            ConstructGame();
+        }
     }else{
         button.style.color = "#b01010";
         button.style.borderBottom = "1vh solid transparent";
@@ -18,10 +21,11 @@ function PressButton(id){
             button.style.borderBottom = "1vh solid #171717";
             button.style.borderTop = "1vh solid #313131";
         }, 150);
+        PressKey(button.id);
     }
     
 
-    PressKey(button.id);
+    
 
 }
 
