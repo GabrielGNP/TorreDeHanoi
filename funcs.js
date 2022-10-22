@@ -504,7 +504,7 @@ function MessageInfo(){
     "Reglas de juego <br>"+
     "-	Solo se pude mover un disco a la vez.<br>"+
     "-	No se puede ubicar un disco más grande sobre un disco más pequeño.<br>"+
-    "-	El juego finaliza cuando todos los discos están en la posición de la rececha.<br>"+
+    "-	El juego finaliza cuando todos los discos están en la posición de la derecha.<br>"+
     "<br>"+
     "Ya está listo para jugar ;) <br>"+
     "<br>"+
