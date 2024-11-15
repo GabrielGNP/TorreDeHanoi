@@ -16,7 +16,7 @@ Discos| en PC|en Móvil
 |6 Discos | 38.141s | - |
 |7 Discos | 01m:31.861s | - |
 |8 Discos | 03m:48.378s | - |
-|9 Discos | 10m:44.987s | - |
+|9 Discos | 08m:30.749s | - |
 |10 Discos | 16m:33.592s | - |
 
 
