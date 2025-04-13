@@ -10,7 +10,7 @@ async function getDataAll() {
         console.log('Registros recibidos:', data);
         return data
     } catch (error) {
-        console.error('Hubo un problema con el fetch:', error);
+        console.error('Hubo un problema con el fetch \n error: '+ error);
     }
     
 }
@@ -28,6 +28,7 @@ async function getDatFromNumDisc(numDisc) {
         return data
     } catch (error) {
         console.error('Hubo un problema con el fetch:', error);
+        return {}
     }
     
 }

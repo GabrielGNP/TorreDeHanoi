@@ -461,7 +461,10 @@ async function ENDGAME(){
     cronometroOn = false;
     console.log(tiempoTot)
 
-    let answerNewRecord = await evaluatRecord(tiempoTot, cantDisc)
+    let answerNewRecord = false
+    if (data!=null){
+        answerNewRecord = await evaluatRecord(tiempoTot, cantDisc)
+    }
 
     let screen = document.getElementById("screen");
     screen.className = "screen endGame";
@@ -480,7 +483,7 @@ async function ENDGAME(){
         let player = window.prompt("Tienes un nuevo Record. Ingresa tu alias \n(solo se guardarán 8 caracteres máximo)", "anónimo")
         
         let newRecord = {
-            "player": player,
+            "player": player.slice(0,8),
             "diskCount": cantDisc,
             "time": tiempoTot
         }
@@ -627,46 +630,52 @@ let data = {}
 async function reLoadTopsTimes(numDisc){
     data = await getDataAll() 
     console.log(data)
-    const filtered = data.filter(item => item.DiskCount === numDisc);
-    console.log(filtered);
-    let screen = document.getElementById("containerTopTimes");
-    let newContentHTML = '<span class="line-top-time title">'+
-                            '<p class="data-top-time">name</p>'+
-                            '<p class="data-top-time">time</p>'+
-                            '<p class="data-top-time">date</p>'+
-                        '</span>';
-    filtered.forEach(record => {
-        newContentHTML = newContentHTML +
-            '<span class="line-top-time">' +
-            '<p class="data-top-time">' + record.Player + '</p>' +
-            '<p class="data-top-time">' + formatearMS(record.Time) + '</p>' +
-            '<p class="data-top-time">' + formateDate(record.DateTime) + '</p>' +
-            '</span>';
-    })
+    if (data != null){
+        const filtered = data.filter(item => item.DiskCount === numDisc);
+        console.log(filtered);
+        let screen = document.getElementById("containerTopTimes");
+        let newContentHTML = '<span class="line-top-time title">'+
+                                '<p class="data-top-time">name</p>'+
+                                '<p class="data-top-time">time</p>'+
+                                '<p class="data-top-time">date</p>'+
+                            '</span>';
+        filtered.forEach(record => {
+            newContentHTML = newContentHTML +
+                '<span class="line-top-time">' +
+                '<p class="data-top-time">' + record.Player + '</p>' +
+                '<p class="data-top-time">' + formatearMS(record.Time) + '</p>' +
+                '<p class="data-top-time">' + formateDate(record.DateTime) + '</p>' +
+                '</span>';
+        })
+        
+        console.log("cargado")
+        screen.innerHTML = newContentHTML;
+    }
     
-    console.log("cargado")
-    screen.innerHTML = newContentHTML;
 
 }
 async function loadTopsTimes(numDisc){
     console.log(data)
-    const filtered = data.filter(item => item.DiskCount === numDisc);
-    let screen = document.getElementById("containerTopTimes");
-    let newContentHTML = '<span class="line-top-time title">'+
-                            '<p class="data-top-time">name</p>'+
-                            '<p class="data-top-time">time</p>'+
-                            '<p class="data-top-time">date</p>'+
-                        '</span>';
-    filtered.forEach(record => {
-        newContentHTML = newContentHTML +
-            '<span class="line-top-time">' +
-            '<p class="data-top-time">' + record.Player + '</p>' +
-            '<p class="data-top-time">' + formatearMS(record.Time) + '</p>' +
-            '<p class="data-top-time">' + formateDate(record.DateTime) + '</p>' +
-            '</span>';
-    })
-    console.log("cambio")
-    screen.innerHTML = newContentHTML;
+    if (data!=null)
+    {
+        const filtered = data.filter(item => item.DiskCount === numDisc);
+        let screen = document.getElementById("containerTopTimes");
+        let newContentHTML = '<span class="line-top-time title">'+
+                                '<p class="data-top-time">name</p>'+
+                                '<p class="data-top-time">time</p>'+
+                                '<p class="data-top-time">date</p>'+
+                            '</span>';
+        filtered.forEach(record => {
+            newContentHTML = newContentHTML +
+                '<span class="line-top-time">' +
+                '<p class="data-top-time">' + record.Player + '</p>' +
+                '<p class="data-top-time">' + formatearMS(record.Time) + '</p>' +
+                '<p class="data-top-time">' + formateDate(record.DateTime) + '</p>' +
+                '</span>';
+        })
+        console.log("cambio")
+        screen.innerHTML = newContentHTML;
+    }
       
 }
 
