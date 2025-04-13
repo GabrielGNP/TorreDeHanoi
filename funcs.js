@@ -50,7 +50,7 @@ setInterval(()=>{
 
 document.addEventListener('keydown', logKey);
 function logKey(e){
-    console.log(e.code);
+    // console.log(e.code);
     //console.log(e.key);
     let button;
     switch (e.code){
@@ -107,7 +107,7 @@ function logKey(e){
 
 let posMenuOP = 0;
 let cantDisc = 3;
-function PressKey(id){
+async function PressKey(id){
     if(document.getElementById("screen").className == "screen menu"){
         switch (id){
             case "BUp":
@@ -124,16 +124,19 @@ function PressKey(id){
                 if(posMenuOP==1){
                     if(cantDisc>3){
                         cantDisc--;
+                        document.getElementById("OPM1").innerHTML = "Discs <CR><</CR> "+cantDisc+" <CR>></CR>";
+                        await loadTopsTimes(cantDisc)
                     }
-                    document.getElementById("OPM1").innerHTML = "Discs <CR><</CR> "+cantDisc+" <CR>></CR>";
+                    
                 }
                 break;
             case "BRight":
                 if(posMenuOP==1){
                     if(cantDisc<10){
                         cantDisc++;
+                        document.getElementById("OPM1").innerHTML= "Discs <CR><</CR> "+cantDisc+" <CR>></CR>";
+                        await loadTopsTimes(cantDisc)
                     }
-                    document.getElementById("OPM1").innerHTML= "Discs <CR><</CR> "+cantDisc+" <CR>></CR>";
                 }
                 break;
         }
@@ -157,13 +160,13 @@ function PressKey(id){
             switch (id){
                 case "BUp":
                     if(take=="<i class='fa-solid fa-angles-down'></i>"){
-                        console.log("takedisc");
+                        // console.log("takedisc");
                         takeDisc();
                     }
                     break;
                 case "BDown":
                     if(take!="<i class='fa-solid fa-angles-down'></i>"){
-                        console.log("takedisc");
+                        // console.log("takedisc");
                         dropDisc();
                     }
                     break;
@@ -196,7 +199,7 @@ let stack1 = new Array();
 let stack2 = new Array();
 let stack3 = new Array();
 let take = "<i class='fa-solid fa-angles-down'></i>";
-let colorsAvailable = ["goldenrod","#da2020","#20da32","#2080da","#7f20da","#da2080","#ff8686","#e3ff86","#8db0ff","#ce9cff"];
+let colorsAvailable = ["#daa520","#da2020","#20da32","#2080da","#7f20da","#da2080","#ff8686","#e3ff86","#8db0ff","#ce9cff"];
 
 function ConstructGame(){
     let screen = document.getElementById("screen");
@@ -232,16 +235,17 @@ function ConstructGame(){
     screen.className = "screen";
 
     for(var i=cantDisc;i>0;i--){
-        stack1.unshift("<div class='disc' style='width:"+i+"0%; border: 0.3vh dashed "+colorsAvailable[i-1]+";'></div>");
+        // stack1.unshift("<div class='disc' style='width:"+i+"0%; border: 0.3vh dashed "+colorsAvailable[i-1]+";'></div>");
+        stack1.unshift("<div class='disc' style='width:"+i+"0%; border: 0.3vh dashed "+colorsAvailable[i-1]+";background:"+colorsAvailable[i-1]+"30'></div>");
     }
     let column1="";
     let column2="";
     let column3="";
-    console.log(stack1.length);
-    console.log(stack2.length);
-    console.log(stack3.length);
+    // console.log(stack1.length);
+    // console.log(stack2.length);
+    // console.log(stack3.length);
     for(var i=0;i<stack1.length;i++){
-        console.log(stack1[i]);
+        // console.log(stack1[i]);
         column1=column1+stack1[i];
     }
     for(var i=0;i<stack2.length;i++){
@@ -350,23 +354,23 @@ function takeDisc(){
                 }
                 break;
         }
-        console.log("weightAr: "+weightAr);
-        console.log(" weightT1:"+weightT1[weightT1.length-1]);
-        console.log(" weightT2:"+weightT2[weightT2.length-1]);
-        console.log(" weightT3:"+weightT3[weightT3.length-1]);
+        // console.log("weightAr: "+weightAr);
+        // console.log(" weightT1:"+weightT1[weightT1.length-1]);
+        // console.log(" weightT2:"+weightT2[weightT2.length-1]);
+        // console.log(" weightT3:"+weightT3[weightT3.length-1]);
         rewrite();
     }
     
 }
 function dropDisc(){
     if(take!="<i class='fa-solid fa-angles-down'></i>"){
-        console.log("dropDisc");
+        // console.log("dropDisc");
         switch (pointer){
             case 1:
                 if(weightT1[weightT1.length-1]>weightAr){
                     weightT1.push(weightAr);
                     weightAr = -1;
-                    console.log("weightAr: "+weightAr+"   weightT1:"+weightT1 );
+                    // console.log("weightAr: "+weightAr+"   weightT1:"+weightT1 );
                     stack1.unshift(take);
                     take = "<i class='fa-solid fa-angles-down'></i>";
                     changePointer();
@@ -376,7 +380,7 @@ function dropDisc(){
                 if(weightT2[weightT2.length-1]>weightAr){
                     weightT2.push(weightAr);
                     weightAr = -1;
-                    console.log("weightAr: "+weightAr+"   weightT2:"+weightT2 );
+                    // console.log("weightAr: "+weightAr+"   weightT2:"+weightT2 );
                     stack2.unshift(take);
                     take = "<i class='fa-solid fa-angles-down'></i>";
                     changePointer();
@@ -386,17 +390,17 @@ function dropDisc(){
                 if(weightT3[weightT3.length-1]>weightAr){
                     weightT3.push(weightAr);
                     weightAr = -1;
-                    console.log("weightAr: "+weightAr+"   weightT2:"+weightT3);
+                    // console.log("weightAr: "+weightAr+"   weightT2:"+weightT3);
                     stack3.unshift(take);
                     take = "<i class='fa-solid fa-angles-down'></i>";
                     changePointer();
                 }
                 break;
         }
-        console.log("weightAr: "+weightAr);
-        console.log(" weightT1:"+weightT1[weightT1.length-1]);
-        console.log(" weightT2:"+weightT2[weightT2.length-1]);
-        console.log(" weightT3:"+weightT3[weightT3.length-1]);
+        // console.log("weightAr: "+weightAr);
+        // console.log(" weightT1:"+weightT1[weightT1.length-1]);
+        // console.log(" weightT2:"+weightT2[weightT2.length-1]);
+        // console.log(" weightT3:"+weightT3[weightT3.length-1]);
         rewrite();
     }
     if(weightT3.length==cantDisc+1){
@@ -431,18 +435,59 @@ function rewrite(){
 
 }
 
-function ENDGAME(){
+async function evaluatRecord(newTime, cantDisc){
+    const filtered = data.filter(item => item.DiskCount === cantDisc);
+    
+    if (filtered.length === 10) {
+        for (const record of filtered) {
+            if (record.Time > newTime) {
+                const records = await getDatFromNumDisc(cantDisc);
+                if (Array.isArray(records)) {
+                    for (const recordSaved of records) {
+                        if (recordSaved.Time > newTime) {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+        }
+        return false;
+    }    
+    return true;
+}
+
+async function ENDGAME(){
     cronometroOn = false;
+    console.log(tiempoTot)
+
+    let answerNewRecord = await evaluatRecord(tiempoTot, cantDisc)
+
     let screen = document.getElementById("screen");
     screen.className = "screen endGame";
     screen.innerHTML= 
-        "<h1>END GAME</h1>"+
+        "<h1 style='letter-spacing: 2px;'>END GAME</h1>"+
+       
+        "<p>Time: </p>" +
+        "<p class='time-result'>"+fullFormatearMS(tiempoTot).toString()+"</p>"+
         "<br>"+
-        "Time: <div style='color:green'>"+formatearMS(tiempoTot).toString()+"</div>" +
-        "<br><br>"+
-        "Reiniciar? <br><br>"+
-        "Enter: Reiniciar <br>"+
-        "Escape: volver al menú <br>";
+        "<p style='color: gray;'>Reiniciar?</p>"+
+        "<p>Enter: Reiniciar </p>"+
+        "<p>Escape: volver al menú </p>";
+
+    if (answerNewRecord){
+        
+        let player = window.prompt("Tienes un nuevo Record. Ingresa tu alias \n(solo se guardarán 8 caracteres máximo)", "anónimo")
+        
+        let newRecord = {
+            "player": player,
+            "diskCount": cantDisc,
+            "time": tiempoTot
+        }
+        
+        await saveData(newRecord)
+        data = await getDataAll() 
+    }
 }
 
 function Reset(){
@@ -454,7 +499,9 @@ function Reset(){
     screen.className = "screen menu";
     screen.innerHTML= 
         "<div class='OP OPSELECT' id='OPM0'>Start</div>"+
-        "<div class='OP' id='OPM1'>Discs <CR><</CR> 3 <CR>></CR></div>";
+        "<div class='OP' id='OPM1'>Discs <CR><</CR> 3 <CR>></CR></div>"+
+        '<div class="container-top-times" id="containerTopTimes"><div class="load-icon"><div class="load-icon-top"></div></div></div>';
+    loadTopsTimes(3)
 }
 
 var tiempoTot = 0;
@@ -464,11 +511,38 @@ setInterval(() =>{
     if(cronometroOn){
         let tiempo = document.getElementById("timer");
         tiempoTot = Date.now()-startTime;
-        tiempo.innerHTML= formatearMS(tiempoTot).toString();
+        tiempo.innerHTML= fullFormatearMS(tiempoTot).toString();
     }
 },1000/60)
 
 function formatearMS(tiempo_ms){
+    if (tiempo_ms == "-")
+        return "-"
+    let MS = tiempo_ms % 1000;
+    
+    
+    const total_seconds = Math.floor(tiempo_ms / 1000);
+    const total_minutes = Math.floor(total_seconds / 60);
+    const total_horas = Math.floor(total_minutes / 60);
+
+    const display_seconds = (total_seconds % 60).toString().padStart(2, "0");
+    const display_minutes = total_minutes.toString().padStart(2,"0");
+    const display_horas = total_horas.toString().padStart(2,"0");
+
+    let textTime = ""
+    if(display_horas!=="00")
+        textTime = textTime+display_horas+":"
+    if(display_minutes!=="00")
+        textTime = textTime+display_minutes+":"
+    
+    textTime = textTime+display_seconds+"."+MS
+    
+    return textTime;
+}
+
+function fullFormatearMS(tiempo_ms){
+    if (tiempo_ms == "-")
+        return "-"
     let MS = tiempo_ms % 1000;
     
     
@@ -483,6 +557,10 @@ function formatearMS(tiempo_ms){
     return `${display_horas}:${display_minutes}:${display_seconds}.${MS}`;
 }
 
+function formateDate(fullDate){
+    let date = fullDate.substring(2,10).replaceAll("-","/")
+    return date.substring(6,8) + "/" +date.substring(3,5) + "/" + date.substring(0,2)
+}
 
 function MessageInfo(){
 
@@ -544,3 +622,54 @@ function DeleteHTML(ObjId){
         document.getElementById("displayblack").remove();
     }
 }
+
+let data = {}
+async function reLoadTopsTimes(numDisc){
+    data = await getDataAll() 
+    console.log(data)
+    const filtered = data.filter(item => item.DiskCount === numDisc);
+    console.log(filtered);
+    let screen = document.getElementById("containerTopTimes");
+    let newContentHTML = '<span class="line-top-time title">'+
+                            '<p class="data-top-time">name</p>'+
+                            '<p class="data-top-time">time</p>'+
+                            '<p class="data-top-time">date</p>'+
+                        '</span>';
+    filtered.forEach(record => {
+        newContentHTML = newContentHTML +
+            '<span class="line-top-time">' +
+            '<p class="data-top-time">' + record.Player + '</p>' +
+            '<p class="data-top-time">' + formatearMS(record.Time) + '</p>' +
+            '<p class="data-top-time">' + formateDate(record.DateTime) + '</p>' +
+            '</span>';
+    })
+    
+    console.log("cargado")
+    screen.innerHTML = newContentHTML;
+
+}
+async function loadTopsTimes(numDisc){
+    console.log(data)
+    const filtered = data.filter(item => item.DiskCount === numDisc);
+    let screen = document.getElementById("containerTopTimes");
+    let newContentHTML = '<span class="line-top-time title">'+
+                            '<p class="data-top-time">name</p>'+
+                            '<p class="data-top-time">time</p>'+
+                            '<p class="data-top-time">date</p>'+
+                        '</span>';
+    filtered.forEach(record => {
+        newContentHTML = newContentHTML +
+            '<span class="line-top-time">' +
+            '<p class="data-top-time">' + record.Player + '</p>' +
+            '<p class="data-top-time">' + formatearMS(record.Time) + '</p>' +
+            '<p class="data-top-time">' + formateDate(record.DateTime) + '</p>' +
+            '</span>';
+    })
+    console.log("cambio")
+    screen.innerHTML = newContentHTML;
+      
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+    reLoadTopsTimes(3)
+})

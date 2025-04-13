@@ -1,9 +1,17 @@
 :root{
     --colorRest : #40bb34;
 }
+@font-face {
+    font-family: "jersey";
+    src: url("Jersey10-Regular.ttf");
+  }
 
 *{
-    font-family: monospace,cursive,system-ui,auto;
+    font-family: jersey,monospace,cursive,system-ui,auto;
+}
+p{
+    padding: 0px;
+    margin: 0px;
 }
 body{
     background: #262626;
@@ -12,7 +20,7 @@ body{
 header{
     background: #171717;
     height: 10vh;
-    font-size: 4vh;
+    font-size: 5vh;
     color: #dcdcdc;
     text-align: center;
 
@@ -30,7 +38,7 @@ header{
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-
+    position: relative;
 }
 
 .board{
@@ -134,19 +142,19 @@ CR{
 }
 .timer{
     
-    font-family: monospace;
-    color: #00f200;
+    font-family: jersey,monospace,cursive,system-ui,auto;
+    color: #00be00;
     position: relative;
     left: 0px;
     align-self: center;
-    font-size: 2vh;
+    font-size: 3vh;
 }
 .menu{
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    font-size: 3vh;
+    font-size: 4vh;
     
 }
 .game{
@@ -205,6 +213,10 @@ CR{
     align-items: center;
     text-align: center;
 }
+.time-result{
+    color:#00e700;
+    font-size: 3.5vh;
+}
 
 .infoL{
     margin-left: 2vh;
@@ -231,4 +243,70 @@ CR{
     
     text-align: right;
     /*position:fixed;*/
+}
+
+.container-top-times{
+    background: #00800514;
+    width: 250px;
+    height: 100%;
+    position: absolute;
+    justify-content: center;
+    right: 0px;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.line-top-time{
+    display: flex;
+    justify-content: space-around;
+}
+.line-top-time.title{
+    background: #00800063;
+}
+
+.data-top-time{
+    font-size: 2vh;
+    margin: 1px;
+    margin-right: 5px;
+    color:#00be00;
+    /* text-shadow: 1px 1px 1px #00f2006a; */
+    flex:1;
+    text-align: center;
+    
+}
+
+.load-icon{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 4px solid green;
+    position: relative;
+    align-self: center;
+    display: flex;
+}
+.load-icon-top{
+    width: 70%;
+    height: 20px;
+    background: #010b0b;
+    align-self: center;
+    position: absolute;
+    left: -10px;
+    animation: spin 2s infinite linear;
+    transform-origin: center right;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 770px) {
+    .container-top-times{
+        height: 150px;
+        position: relative;
+        justify-content: normal;
+    } 
 }
